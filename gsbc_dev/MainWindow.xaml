@@ -5,8 +5,46 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:gsbc_dev"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="MainWindow" Height="450" Width="800" Background="Black">
+    <Grid Margin="0,0,463.6,0">
+        <Grid  Background="Black" Margin="0,0,41,0">
+            <StackPanel Margin="0,0,9.6,0" >
+                <StackPanel.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF0F0C0C" Offset="0"/>
+                        <GradientStop Color="#FF1B1B1B" Offset="1"/>
+                    </LinearGradientBrush>
+                </StackPanel.Background>
+                <StackPanel Orientation="Horizontal" Margin="0,0,0.2,0" Height="391">
+                    <StackPanel Margin="10,60,0,89.6" Width="109">
+                        <TextBlock Text="Port Name" Margin="5" Foreground="#B2FFFFFF" Width="130" Height="22" FontSize="14" FontFamily="Roboto"/>
+                        <TextBlock Text="Baud Rate" Margin="5" Foreground="#B2FFFFFF" Height="22" FontSize="14" FontFamily="Roboto"/>
+                        <TextBlock Text="Data Bits" Margin="5" Foreground="#B2FFFFFF" Height="22" FontSize="14" FontFamily="Roboto"/>
+                        <TextBlock Text="Stop Bits" Margin="5" Foreground="#B2FFFFFF" Height="22" FontSize="14" FontFamily="Roboto"/>
+                        <TextBlock Text="Parity" Margin="5" Foreground="#B2FFFFFF" Height="22" FontSize="14" FontFamily="Roboto"/>
+                        <TextBlock Text="Handshake" Margin="5" Foreground="#B2FFFFFF" Height="22" FontSize="14" FontFamily="Roboto"/>
+                        <TextBlock Text="Delay Time" Margin="5" Foreground="#B2FFFFFF" Height="22" FontSize="14" FontFamily="Roboto"/>
+                        <TextBlock Text="Launcher" Margin="5"  Foreground="#B2FFFFFF" Height="22" FontSize="14" FontFamily="Roboto" Visibility="Hidden"/>
+                    </StackPanel>
+                    <StackPanel Width="127" Margin="0,60,0,89.6">
+                        <ComboBox x:Name="portCombo" Width="120" Margin="5"/>
+                        <ComboBox x:Name="baudCombo" Width="120" Margin="5"/>
+                        <ComboBox x:Name="databitCombo" Width="120" Margin="5"/>
+                        <ComboBox x:Name="stopbitCombo" Width="120" Margin="5" Background="White"/>
+                        <ComboBox x:Name="parityCombo" Width="120" Margin="5"/>
+                        <ComboBox x:Name="handshakeCombo" Width="120" Margin="5"/>
+                        <ComboBox x:Name="delayCombo" Width="120" Margin="5"/>
+                        <ComboBox x:Name="portLauncher" Width="120" Margin="5" Visibility="Hidden"/>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+            <Button x:Name="connectButton" Content="Connect" Margin="25,302,172.6,84" Background="#FF1BAF24" Foreground="White" FontFamily="Bebas" Click="okeSetButton_Click"/>
+            <Button x:Name="disconnectButton" Content="Disconnect" Margin="127,302,70.6,84" Background="#FFAF4B1B" Foreground="White" FontFamily="Bebas" Click="disconnectButton_Click"/>
+        </Grid>
+        <TextBox x:Name="SerialMonitor" HorizontalAlignment="Left" Height="114" Margin="308,24,-436,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="458" Background="White" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" Foreground="#FFE25757" Text=""/>
+        <Button x:Name="manualInput" Content="Send" HorizontalAlignment="Left" Margin="610,323,-355,0" VerticalAlignment="Top" Width="75" Click="manualInput_Click" Height="23"/>
+        <TextBox x:Name="inpulat" HorizontalAlignment="Left" Height="23" Margin="308,323,-98,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="inputver" HorizontalAlignment="Left" Height="23" Margin="453,323,-243,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="bearings" Content="Label" HorizontalAlignment="Left" Margin="357,190,-127,0" VerticalAlignment="Top" Width="100" Background="Red"/>
     </Grid>
 </Window>
